@@ -66,6 +66,58 @@
         <input type="submit" value="Login" id="submitbutton" />
       </form>
     </div>
-    <script type="module" src="../javascript/script.js"></script>
+    <!-- <script type="module" src="../javascript/script.js"></script> -->
+    <script>
+      import { initializeApp } from "https://www.gstatic.com/firebasejs/9.9.1/firebase-app.js";
+      import {
+        getDatabase,
+        set,
+      } from "https://www.gstatic.com/firebasejs/9.9.1/firebase-database.js";
+      import {
+        getAuth,
+        signInWithEmailAndPassword,
+      } from "https://www.gstatic.com/firebasejs/9.9.1/firebase-auth.js";
+
+      // TODO: Add SDKs for Firebase products that you want to use
+      // https://firebase.google.com/docs/web/setup#available-libraries
+
+      // Your web app's Firebase configuration
+      const firebaseConfig = {
+        apiKey: "AIzaSyDgAqIe_lIwhVWI8otiaNy0RhlYVDTQE34",
+        authDomain: "registrations-web-app.firebaseapp.com",
+        databaseURL:
+          "https://registrations-web-app-default-rtdb.firebaseio.com",
+        projectId: "registrations-web-app",
+        storageBucket: "registrations-web-app.appspot.com",
+        messagingSenderId: "347321779052",
+        appId: "1:347321779052:web:41435cc5ac12b6c4326949",
+      };
+
+      const app = initializeApp(firebaseConfig);
+      const database = getDatabase(app);
+      const auth = getAuth();
+
+      const loginbutton = document.getElementById("submitbutton");
+      loginbutton.addEventListener("click", (e) => {
+        e.preventDefault();
+        var email = document.getElementById("email").value;
+        var password = document.getElementById("password").value;
+
+        signInWithEmailAndPassword(auth, email, password)
+          .then((userCredential) => {
+            const user = userCredential.user;
+            sessionStorage.setItem("userid", user.uid);
+            window.location.href =
+              "https://sreshthtiwari.github.io/alright/pages/registrations.html";
+            // alert("Logged in successfully");
+          })
+          .catch((error) => {
+            const errorcode = error.code;
+            const errormessage = error.message;
+
+            alert(errormessage);
+          });
+      });
+    </script>
   </body>
 </html>
