@@ -22,49 +22,31 @@
     <!-- Final Navbar for other Pages -->
     <div class="sidebar">
       <div class="logo-details">
-        <!-- <i class="bx bx-category-alt"></i> -->
-        <div class="logo_name">ESNC Council</div>
+        <!-- <i class="bx bx-category-alt" id="btn"></i> -->
+        <div class="logo_name">ESNC Lifest</div>
         <i class="bx bx-menu" id="btn"></i>
       </div>
       <ul class="nav-list">
         <li>
-          <a href="../../index.html#first" class="link">
+          <a href="../index.html" class="link">
             <i class="bx bx-home"></i>
             <span class="links_name">Home</span>
           </a>
         </li>
         <li>
-          <a href="StudentCouncil.html" class="link">
-            <i class="bx bx-user"></i>
-            <span class="links_name">Your Council</span>
+          <a href="../pages/registrations.html" class="link">
+            <i class="bx bx-envelope-open"></i>
+            <span class="links_name">Register</span>
           </a>
         </li>
         <li>
-          <a href="Form.html" class="link">
-            <i class="bx bx-message-rounded"></i>
-            <span class="links_name">Send Idea</span>
+          <a href="../index.html#oldlitfest" class="link">
+            <i class="bx bx-camera"></i>
+            <span class="links_name">Gallery</span>
           </a>
         </li>
         <li>
-          <a href="NewImplementations.html" class="link">
-            <i class="bx bx-calendar-event"></i>
-            <span class="links_name">Initiatives</span>
-          </a>
-        </li>
-        <li>
-          <a href="Houses.html" class="link">
-            <i class="bx bx-home"></i>
-            <span class="links_name">Houses</span>
-          </a>
-        </li>
-        <li>
-          <a href="Events.html" class="link">
-            <i class="bx bx-calendar"></i>
-            <span class="links_name">Events</span>
-          </a>
-        </li>
-        <li>
-          <a href="Help.html" class="link">
+          <a href="../pages/help.html" class="link">
             <i class="bx bx-question-mark"></i>
             <span class="links_name">Help</span>
           </a>
@@ -81,29 +63,6 @@
       <h2>Frequently Asked Questions</h2>
       <div class="accordion">
         <div class="accordion-item">
-          <a>Do I have to submit my information while filling the form?</a>
-          <div class="content">
-            <p>
-              No, while filling out the form to submit your idea, your name or
-              your grade isn't required. However, it is a good idea to include
-              this information.
-            </p>
-          </div>
-        </div>
-        <div class="accordion-item">
-          <a>How do I submit my idea?</a>
-          <div class="content">
-            <p>
-              The Interface of this website is designed to deliver a
-              user-friendly experience. In order to submit an idea, all you have
-              to do is click on the button on the top right of the screen in
-              order to expand the side-bar. After that, click on the 'Send Idea'
-              button, which will redirect you to the form page. Fill out the
-              form, and then click 'send'.
-            </p>
-          </div>
-        </div>
-        <div class="accordion-item">
           <a>Can I use this on a Mobile Device?</a>
           <div class="content">
             <p>
@@ -114,13 +73,11 @@
           </div>
         </div>
         <div class="accordion-item">
-          <a>Where do my ideas get submitted?</a>
+          <a>Do I need to fill in all fields in the form?</a>
           <div class="content">
             <p>
-              After you submit the form, your idea is directly sent to a Google
-              Account of the Student Council, where all ideas are consolidated
-              into a single spreadsheet. This spreadsheet is read every week by
-              a member of the council.
+              No, you only need to fill in the forms of the events for which
+              your school will be participating
             </p>
           </div>
         </div>
@@ -129,8 +86,8 @@
           <div class="content">
             <p>
               If you encounter a bug or problem while using the website, you can
-              take a screenshot or recording of it, and send it to the developer
-              - whose socials are available in the bottom of the website.
+              take a screenshot or recording of it, and mail it to:
+              litfest@es07.euroschoolindia.com
             </p>
           </div>
         </div>
@@ -146,12 +103,55 @@
       }
 
       items.forEach((item) => item.addEventListener("click", toggleAccordion));
+      var heading = document.getElementById("head");
+
+      let sidebar = document.querySelector(".sidebar");
+      let closeBtn = document.querySelector("#btn");
+      let links = document.getElementsByClassName("link");
+      let list_items = document.getElementsByTagName("li");
+      const links_array = Array.from(links);
+      const array_list_items = Array.from(list_items);
+
+      window.onload = remove_links;
+
+      function remove_links() {
+        links_array.forEach((element) => {
+          element.remove();
+        });
+        // console.log("removed links");
+      }
+
+      function addlinks() {
+        var counter = 0;
+
+        array_list_items.forEach((element) => {
+          element.appendChild(links_array[counter]);
+          counter += 1;
+        });
+
+        // console.log("added links");
+      }
+
+      closeBtn.addEventListener("click", () => {
+        sidebar.classList.toggle("open");
+        menuBtnChange();
+      });
+
+      function menuBtnChange() {
+        if (sidebar.classList.contains("open")) {
+          addlinks();
+          closeBtn.classList.replace("bx-menu", "bx-menu-alt-right");
+        } else {
+          remove_links();
+          closeBtn.classList.replace("bx-menu-alt-right", "bx-menu");
+        }
+      }
     </script>
     <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
     <!-- Go To Form -->
     <section class="form" id="form">
       <h1>Register your school!</h1>
-      <a href="../pages/login.html">Ask us</a>
+      <a href="../pages/login.html">Go!</a>
     </section>
     <!-- Footer -->
     <section class="footer">
@@ -160,7 +160,7 @@
         <a
           target="_blank"
           rel="noopener noreferrer"
-          href="https://github.com/SreshthTiwari/sv.io"
+          href="https://github.com/SreshthTiwari/"
           ><i class="bx bxl-github"></i
         ></a>
         <a
@@ -172,11 +172,10 @@
         <a
           target="_blank"
           rel="noopener noreferrer"
-          href="https://www.instagram.com/esnc.senate/"
+          href="https://instagram.com/belles_lettres.esnc?igshid=YmMyMTA2M2Y="
           ><i class="bx bxl-instagram"></i
         ></a>
       </div>
     </section>
-    <script type="module" src="../javascript/script.js"></script>
   </body>
 </html>
