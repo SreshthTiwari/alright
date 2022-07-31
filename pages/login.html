@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="../images/logo.png" />
+    <link rel="stylesheet" href="../styling/common.css" />
+    <link rel="stylesheet" href="../styling/login.css" />
+    <link
+      href="https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+    <title>Login</title>
+  </head>
+  <body>
+    <div class="sidebar">
+      <div class="logo-details">
+        <!-- <i class="bx bx-category-alt" id="btn"></i> -->
+        <div class="logo_name">ESNC Lifest</div>
+        <i class="bx bx-menu" id="btn"></i>
+      </div>
+      <ul class="nav-list">
+        <li>
+          <a href="../index.html" class="link">
+            <i class="bx bx-home"></i>
+            <span class="links_name">Home</span>
+          </a>
+        </li>
+        <li>
+          <a href="../pages/registrations.html" class="link">
+            <i class="bx bx-envelope-open"></i>
+            <span class="links_name">Register</span>
+          </a>
+        </li>
+        <li>
+          <a href="../index.html#oldlitfest" class="link">
+            <i class="bx bx-camera"></i>
+            <span class="links_name">Gallery</span>
+          </a>
+        </li>
+        <li>
+          <a href="../pages/help.html" class="link">
+            <i class="bx bx-question-mark"></i>
+            <span class="links_name">Help</span>
+          </a>
+        </li>
+      </ul>
+    </div>
+    <div class="center">
+      <div class="euroschoologo">
+        <img src="../images/logo.png" alt="" />
+      </div>
+      <h1>EuroSchool North Campus</h1>
+      <form id="loginform">
+        <div class="txt_field">
+          <input type="email" name="email" id="email" required />
+          <span></span>
+          <label>Username</label>
+        </div>
+        <div class="txt_field">
+          <input type="password" name="password" id="password" required />
+          <span></span>
+          <label>Password</label>
+        </div>
+        <input type="submit" value="Login" id="submitbutton" />
+      </form>
+    </div>
+    <script type="module" src="../javascript/script.js"></script>
+  </body>
+</html>
