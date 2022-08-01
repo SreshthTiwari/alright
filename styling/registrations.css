@@ -301,24 +301,24 @@ form .txt_field{
 }
 .lastslide h1{
   font-size: 50px;
-  padding: 0 10px 0px 100px;
+  padding: 0 10px 0px 10px;
   margin-top: 50px;
 }
 .lastslide .line{
   width: 4.5rem;
   height: 1px;
   background-color: rgba(31, 18, 8, 56);
-  margin: 30px 10px 0px 100px;
+  margin: 30px 10px 0px 10px;
 }
 .lastslide p{
-  padding: 30px 200px 0px 100px;
+  padding: 30px 200px 0px 10px;
   font-size: 25px;
   font-weight: 100;
 }
 form .lastslide .txt_field{
   position: relative;
   border-bottom: 2px solid rgba(31, 18, 8, 56);
-  margin: 30px 100px;
+  margin: 30px 10px;
 }
 .lastslide .txt_field{
   width: 50%;
@@ -374,7 +374,7 @@ form .lastslide .txt_field{
   border-radius: 22px;
   font-weight: 100;
   transition: .4s;
-  margin: 20px 100px;
+  margin: 20px 10px;
 }
 .lastslide button[type="submit"]:hover{
   color: rgb(255, 237, 215);
@@ -383,8 +383,11 @@ form .lastslide .txt_field{
 .morethan2students .last{
   margin-top: 0px;
 }
+.morethan2students h3{
+  color: rgb(255, 237, 215);
+}
 #event28{
-  width: 250vh;
+  width: 420vh;
 }
 #event28 .morethan2students{
   width: 150vh;
@@ -397,7 +400,7 @@ form .lastslide .txt_field{
   font-size: 18px;
 }
 #event29{
-  width: 230vh;
+  width: 400vh;
 }
 #event29 .morethan2students{
   width: 130vh;
