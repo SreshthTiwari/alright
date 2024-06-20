@@ -6,3 +6,9 @@ This repo contains the website files for EuroSchool North Campus' annual event, 
 ## Features
 - Accept registrations for different events through form.
 - Display information about each event
+- Feature 3
+- Feature 4
+- Feature 5
+
+## Tech Stack
+HTML, CSS, Vanilla JS
